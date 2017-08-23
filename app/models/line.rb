@@ -3,6 +3,10 @@ class Line
 
   @@all = []
 
+  def self.all
+    @@all
+  end
+
   def initialize(content, character)
     @content = content
     @character = character

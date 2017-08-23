@@ -16,4 +16,9 @@ namespace :shakespeare do
     ibiblio = IbiblioXML.new(args.play_name)
     RakeHelper.run_command_line(ibiblio)
   end
+
+  desc "see a list of possible plays"
+  task :list => :environment do
+    IbiblioXML.list_plays
+  end
 end

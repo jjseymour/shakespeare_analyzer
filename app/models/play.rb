@@ -1,5 +1,5 @@
 class Play
-  attr_reader :title, :characters
+  attr_reader :title, :characters, :error
 
   @@all = []
 
@@ -13,8 +13,14 @@ class Play
     self.new(title)
   end
 
-  def self.find_by_title(title)
-    all.find { |play| play.title == title }
+  def self.find_by_index(index)
+    begin
+      found_play = all[index]
+    rescue Exception => e
+      puts e
+      binding.pry
+    end
+    found_play
   end
 
   def initialize(title)
@@ -34,4 +40,11 @@ class Play
   def output_lines_per_character
     characters.each { |character| puts "#{character.lines_count} #{character.name}" }
   end
+
+  private
+
+  def self.find_by_title(title)
+    all.find { |play| play.title == title }
+  end
+
 end

@@ -1,0 +1,18 @@
+<% if @play %>
+  <h2><%= @play.title %></h2>
+  <table>
+    <tr>
+      <th>Character Name &nbsp;&nbsp;</th>
+      <th>Number of Lines</th>
+    </tr>
+
+    <% @play.characters.each do |character| %>
+      <tr>
+        <td><%= character.name %></td>
+        <td><%= character.lines_count %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  Could Not Complete This Request
+<% end %>

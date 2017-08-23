@@ -20,7 +20,4 @@ RSpec.describe IbiblioXML, :type => :adapter do
     expect(no_arg.url).to include(@url)
   end
 
-  it 'parses input' do
-    @xml_call.call
-  end
 end
