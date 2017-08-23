@@ -1,0 +1,7 @@
+<%= form_tag authenticity_token: true do %>
+  <%= text_field_tag 'url', nil, placeholder: 'Enter a play' %>
+  <%= submit_tag 'Check Play' %>
+<% end %>
+
+<div class='play_lines_output'></div>
+<canvas id='chart' width='400' height='400'></canvas>
