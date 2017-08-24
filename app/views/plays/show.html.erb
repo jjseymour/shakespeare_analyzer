@@ -1,5 +1,7 @@
 <% if @play %>
+
   <h2><%= @play.title %></h2>
+
   <table>
     <tr>
       <th>Character Name &nbsp;&nbsp;</th>
@@ -12,7 +14,11 @@
         <td><%= character.lines_count %></td>
       </tr>
     <% end %>
+
   </table>
+
 <% else %>
+
   Could Not Complete This Request
+
 <% end %>

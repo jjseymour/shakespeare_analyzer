@@ -1,6 +1,4 @@
 class CharacterSerializer
-  attr_reader :character
-
   def self.serialize(character)
     @character = character
     {

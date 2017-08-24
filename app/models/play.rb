@@ -18,7 +18,6 @@ class Play
       found_play = all[index]
     rescue Exception => e
       puts e
-      binding.pry
     end
     found_play
   end

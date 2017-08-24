@@ -8,7 +8,7 @@ class Character
   end
 
   def self.find_or_create_by_name(name, play)
-    found_char = all.find{|character| character.name == name}
+    found_char = all.find { |character| character.name == name }
     return found_char if found_char
     self.new(name, play)
   end

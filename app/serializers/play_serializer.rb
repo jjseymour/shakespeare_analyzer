@@ -1,6 +1,4 @@
 class PlaySerializer
-  attr_reader :play
-
   def self.serialize(play)
     @play = play
     {
