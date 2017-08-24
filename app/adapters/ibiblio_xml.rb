@@ -151,7 +151,7 @@ class IbiblioXML
 
   def parse_url(url)
     return url if url.include?('www.ibiblio.org')
-    naturalize_url = url.downcase.gsub(/[^0-9a-z]/, "")
+    naturalize_url = url.downcase.gsub(/[^0-9a-z_]/, "")
     if PLAYS.has_key?(naturalize_url.to_sym)
       "http://www.ibiblio.org/xml/examples/shakespeare/#{PLAYS[naturalize_url.to_sym]}.xml"
     else

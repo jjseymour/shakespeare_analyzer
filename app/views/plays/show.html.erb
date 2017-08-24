@@ -1,8 +1,8 @@
 <% if @play %>
 
-  <h2><%= @play.title %></h2>
+  <h2 class="text-center"><%= @play.title %></h2>
 
-  <table>
+  <table class="table">
     <tr>
       <th>Character Name &nbsp;&nbsp;</th>
       <th>Number of Lines</th>
@@ -19,6 +19,8 @@
 
 <% else %>
 
-  Could Not Complete This Request
+  <blockquote class='blockquote text-center play_lines_output'>
+    <p class="mc-0">Could Not Complete This Request</p>
+  </blockquote>
 
 <% end %>

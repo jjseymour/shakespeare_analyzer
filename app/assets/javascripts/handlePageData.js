@@ -6,8 +6,8 @@ function handleError(data) {
 function formatError(error) {
   return (
     `
-      <h1>Content ${error}</h1>
-      <h2>Please try again</h2>
+      <p class="mb-0">Content ${error}</p>
+      <p class="mb-0">Please try again</p>
     `
   )
 }
