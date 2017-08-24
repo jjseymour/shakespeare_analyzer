@@ -27,13 +27,13 @@ RSpec.describe Play, :type => :model do
     end
   end
 
-  describe '#all' do
+  describe '.all' do
     it 'returns the `all` class variable' do
       expect(Play.all).to equal(Play.class_variable_get(:@@all))
     end
   end
 
-  describe '#find_or_create_by_title' do
+  describe '.find_or_create_by_title' do
     it 'returns the first object found matching the string passed in' do
       expect(Play.find_or_create_by_title(@title)).to eql(@play)
     end
@@ -45,7 +45,13 @@ RSpec.describe Play, :type => :model do
     end
   end
 
-  describe '.find_or_create_character' do
+  describe '.find_by_index' do
+    it 'finds a play by the index of the `all` array' do
+      expect(Play.find_by_index(0)).to eql(@play)
+    end
+  end
+
+  describe '#find_or_create_character' do
     it 'finds a character object and adds it to the characters array' do
       expect(@play.find_or_create_character('Nikola Tesla')).to eql(@character)
     end
@@ -60,22 +66,17 @@ RSpec.describe Play, :type => :model do
     end
   end
 
-  describe '.sorted_characters' do
+  describe '#sorted_characters' do
     it 'sorts the characters array by character line count' do
       expect(@play.characters.sort_by { |char| char.lines_count }.reverse).to eql(@play.sorted_characters)
     end
   end
 
-  describe '.output_lines_per_character' do
+  describe '#output_lines_per_character' do
     it 'logs each characters line count and name' do
       @play.output_lines_per_character
       expect { @play.output_lines_per_character }.to output.to_stdout
       expect { @play.output_lines_per_character }.to output("0 Nikola Tesla\n").to_stdout
     end
-  end
-
-  xit 'prints line count and character name' do
-    url = 'http://www.ibiblio.org/xml/examples/shakespeare/hamlet.xml'
-    IbiblioXML.new(url).call
   end
 end

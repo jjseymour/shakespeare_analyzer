@@ -28,13 +28,13 @@ RSpec.describe Character, :type => :model do
     end
   end
 
-  describe '#all' do
+  describe '.all' do
     it 'returns the `all` class variable' do
       expect(Character.all).to equal(Character.class_variable_get(:@@all))
     end
   end
 
-  describe '#find_or_create_by_name' do
+  describe '.find_or_create_by_name' do
     it 'returns the first object found matching the string passed in' do
       expect(Character.find_or_create_by_name(@name, @play)).to eql(@character)
     end
@@ -46,14 +46,14 @@ RSpec.describe Character, :type => :model do
     end
   end
 
-  describe '.add_line' do
+  describe '#add_line' do
     it 'adds a new line object to the lines array' do
       @character.add_line('Amazing.')
       expect(@character.lines.last.content).to eql('Amazing.')
     end
   end
 
-  describe '.lines_count' do
+  describe '#lines_count' do
     it 'returns a count of the line objects in the lines array' do
       expect(@character.lines_count).to eql(0)
       @character.add_line('Amazing.')

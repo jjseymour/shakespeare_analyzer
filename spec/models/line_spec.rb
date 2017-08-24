@@ -22,7 +22,7 @@ RSpec.describe Line, :type => :model do
     end
   end
 
-  describe '#all' do
+  describe '.all' do
     it 'returns the `all` class variable' do
       expect(Line.all).to equal(Line.class_variable_get(:@@all))
     end
