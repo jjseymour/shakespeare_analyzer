@@ -1,7 +1,16 @@
-<%= form_tag authenticity_token: true do %>
-  <%= text_field_tag 'url', nil, placeholder: 'Enter a play' %>
-  <%= submit_tag 'Check Play' %>
-<% end %>
+<div style="padding: 5%;">
+  <div style="right: 44%;top: 5%;position: absolute;">
+    <%= form_tag authenticity_token: true, class: 'form-inline' do %>
+      <div class='form-group'>
+        <%= label_tag 'Play Title: ' %>
+        <%= text_field_tag 'url', nil, placeholder: 'Enter a play', class: 'form-control' %>
+        <%= submit_tag 'Check Play', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<div class='play_lines_output'></div>
-<canvas id='chart' width='400' height='400'></canvas>
+<div>
+  <div class='play_lines_output'></div>
+  <canvas id='chart' width='400' height='400'></canvas>
+</div>
