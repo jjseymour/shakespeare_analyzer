@@ -6,25 +6,25 @@ class IbiblioXML
   DEFAULT_URL = "http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml"
 
   PLAYS = {
-    "all'swellthatendswell": "all_well",
+    "allswellthatendswell": "all_well",
     "asyoulikeit": "as_you",
     "antonyandcleopatra": "a_and_c",
     "acomedyoferrors": "com_err",
     "coriolanus": "coriolan",
     "cymbelin": "cymbelin",
-    "amidsummernight'sdream": "dream",
+    "amidsummernightsdream": "dream",
     "hamlet": "hamlet",
     "henryiv,parti": "hen_vi_1",
     "henryiv,partii": "hen_vi_2",
     "henryv": "hen_v",
     "henryviii": "hen_viii",
-    "henryvii,part1": "hen_vi_1",
-    "henryvii,part2": "hen_vi_2",
-    "henryvii,part3": "hen_vi_3",
+    "henryviipart1": "hen_vi_1",
+    "henryviipart2": "hen_vi_2",
+    "henryviipart3": "hen_vi_3",
     "thelifeanddeathofkingjohn": "john",
     "juliuscaesar": "j_caesar",
     "kinglear": "lear",
-    "love'slabor'slost": "lll",
+    "loveslaborslost": "lll",
     "macbeth": "macbeth",
     "themerchantofvenice": "merchant",
     "muchadoaboutnothing": "much_ado",
@@ -42,7 +42,7 @@ class IbiblioXML
     "troilusandcressida": "troilus",
     "twogentlemenofverona": "two_gent",
     "twelfthnight": "t_night",
-    "awinter'stale": "win_tale"
+    "awinterstale": "win_tale"
   }
 
   LIST_PLAYS = [
@@ -151,7 +151,7 @@ class IbiblioXML
 
   def parse_url(url)
     return url if url.include?('www.ibiblio.org')
-    naturalize_url = url.downcase.gsub(/\s+/, "")
+    naturalize_url = url.downcase.gsub(/[^0-9a-z]/, "")
     if PLAYS.has_key?(naturalize_url.to_sym)
       "http://www.ibiblio.org/xml/examples/shakespeare/#{PLAYS[naturalize_url.to_sym]}.xml"
     else
