@@ -26,13 +26,3 @@ function loopNTimes(n) {
     return iter(0)
   }
 }
-
-function resetSubmit() {
-  var submitButton = docQuerySelector('input[type=submit]')
-  submitButton.disabled = false
-}
-
-function resetInput() {
-  var inputBox = docQuerySelector('input[type=text]')
-  inputBox.value = ''
-}

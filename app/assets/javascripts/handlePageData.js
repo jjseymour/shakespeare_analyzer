@@ -55,3 +55,13 @@ function createColorsForChart(colorsNum) {
 function createChart(ctx, chartData) {
   CHART = new Chart(ctx, chartData)
 }
+
+function resetSubmit() {
+  var submitButton = docQuerySelector('input[type=submit]')
+  submitButton.disabled = false
+}
+
+function resetInput() {
+  var inputBox = docQuerySelector('input[type=text]')
+  inputBox.value = ''
+}
